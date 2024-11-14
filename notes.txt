@@ -1,0 +1,9 @@
+https://github.com/michal-kosinski/clurgo-workshop
+https://clurgo-dev.signin.aws.amazon.com/console
+
+aws-bartlomiej
+aws-dominik
+aws-krzysztof
+aws-lukasz
+aws-maciej
+aws-michal
