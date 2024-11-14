@@ -1,0 +1,46 @@
+{
+  "Version": "2008-10-17",
+  "Id": "__default_policy_ID",
+  "Statement": [
+    {
+      "Sid": "__default_statement_ID",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": [
+        "SNS:Publish",
+        "SNS:RemovePermission",
+        "SNS:SetTopicAttributes",
+        "SNS:DeleteTopic",
+        "SNS:ListSubscriptionsByTopic",
+        "SNS:GetTopicAttributes",
+        "SNS:AddPermission",
+        "SNS:Subscribe"
+      ],
+      "Resource": "arn:aws:sns:eu-central-1:416655267863:AmazonTextract-mikosins-workshop",
+      "Condition": {
+        "StringEquals": {
+          "AWS:SourceOwner": "416655267863"
+        }
+      }
+    },
+    {
+      "Sid": "Sub_SQS_AmazonTextract-c_0",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": [
+        "sns:Subscribe",
+        "sns:Receive"
+      ],
+      "Resource": "arn:aws:sns:eu-central-1:416655267863:AmazonTextract-mikosins-workshop",
+      "Condition": {
+        "StringLike": {
+          "sns:Endpoint": "arn:aws:sqs:eu-central-1:416655267863:mikosins-workshop"
+        }
+      }
+    }
+  ]
+}

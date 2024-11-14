@@ -1,0 +1,28 @@
+{
+  "Version": "2012-10-17",
+  "Id": "__default_policy_ID",
+  "Statement": [
+    {
+      "Sid": "__owner_statement",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::416655267863:root"
+      },
+      "Action": "SQS:*",
+      "Resource": "arn:aws:sqs:eu-central-1:416655267863:mikosins-workshop"
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "sns.amazonaws.com"
+      },
+      "Action": "SQS:SendMessage",
+      "Resource": "arn:aws:sqs:eu-central-1:416655267863:mikosins-workshop",
+      "Condition": {
+        "ArnEquals": {
+          "aws:SourceArn": "arn:aws:sns:eu-central-1:416655267863:AmazonTextract-mikosins-workshop"
+        }
+      }
+    }
+  ]
+}

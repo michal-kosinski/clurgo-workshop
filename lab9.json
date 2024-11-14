@@ -1,0 +1,12 @@
+{
+  "secrets": [
+    {
+      "name": "DB_USERNAME",
+      "valueFrom": "arn:aws:secretsmanager:eu-central-1:416655267863:secret:rds!db-17109cb1-4c87-41eb-938f-02516bc45627-eCHvtg:username::"
+    },
+    {
+      "name": "DB_PASSWORD",
+      "valueFrom": "arn:aws:secretsmanager:eu-central-1:416655267863:secret:rds!db-17109cb1-4c87-41eb-938f-02516bc45627-eCHvtg:password::"
+    }
+  ]
+}
